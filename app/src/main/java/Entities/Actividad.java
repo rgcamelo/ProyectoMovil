@@ -13,6 +13,7 @@ public class Actividad{
     private Categoria Categoria;
     private int Megusta = 0;
     private int Asistire = 0;
+    private  Disponibilidad disponibilidad;
 
     public Actividad(String nombre, String ubicacion, String descripcion, String telefono, String estado,String tipo, Categoria categoria, Disponibilidad disponibilidad, Municipio municipio){
         Nombre = nombre;
