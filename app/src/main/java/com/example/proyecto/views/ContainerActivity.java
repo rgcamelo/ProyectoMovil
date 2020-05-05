@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import com.example.proyecto.R;
 import com.example.proyecto.views.fragments.HomeFragment;
+import com.example.proyecto.views.fragments.ManagementFragment;
 import com.example.proyecto.views.fragments.ProfileFragment;
 import com.example.proyecto.views.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -37,6 +38,9 @@ public class ContainerActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_profile:
                         selectedFragment = new ProfileFragment();
+                        break;
+                    case R.id.mag_profile:
+                        selectedFragment = new ManagementFragment();
                         break;
                 }
                 showSelectedFragment(selectedFragment);
