@@ -1,10 +1,10 @@
 package Entities;
 
 public class Department {
-    public  String Nombre;
+    public  String Name;
 
     @Override
     public String toString() {
-        return Nombre;
+        return Name;
     }
 }
