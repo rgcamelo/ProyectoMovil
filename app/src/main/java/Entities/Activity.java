@@ -9,8 +9,8 @@ public abstract class Activity {
     public String Phone;
     public String State;
     public String Type;
-    public Municipio Municipality;
-    public Categoria Category;
+    public Municipality Municipality;
+    public Category Category;
     private int Like = 0;
     private int Assistant = 0;
 

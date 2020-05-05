@@ -1,17 +1,12 @@
 package Entities;
 
-import android.location.Location;
-
-import androidx.annotation.NonNull;
-
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Place extends Activity {
 
     public ArrayList<Day> Schedule;
 
-    public Place(String name, String location, String description, String phone, String state, String type, Categoria category, Municipio municipality){
+    public Place(String name, String location, String description, String phone, String state, String type, Entities.Category category, Entities.Municipality municipality){
 
         Name = name;
         Location = location;

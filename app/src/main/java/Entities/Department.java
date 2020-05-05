@@ -1,6 +1,6 @@
 package Entities;
 
-public class Departamento {
+public class Department {
     public  String Nombre;
 
     @Override

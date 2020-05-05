@@ -2,12 +2,13 @@ package Entities;
 
 import androidx.annotation.NonNull;
 
-public class Municipio {
+public class Municipality {
 
     public  String Nombre;
+    public Department department;
 
     @Override
     public String toString() {
-        return Nombre;
+        return Nombre + department;
     }
 }

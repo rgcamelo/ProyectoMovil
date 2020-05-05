@@ -3,12 +3,12 @@ package Entities;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Evento extends Activity {
+public class Event extends Activity {
 
     private Date DateStart;
     private Date DateEnd;
 
-    public Evento(String name, String location, String description, String phone, String state,String type, Categoria category, Municipio municipality,Date dateStart,Date dateEnd){
+    public Event(String name, String location, String description, String phone, String state, String type, Entities.Category category, Entities.Municipality municipality, Date dateStart, Date dateEnd){
 
         Name = name;
         Location = location;
