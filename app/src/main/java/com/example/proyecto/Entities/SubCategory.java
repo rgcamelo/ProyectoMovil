@@ -1,6 +1,4 @@
-package Entities;
-
-import androidx.annotation.NonNull;
+package com.example.proyecto.Entities;
 
 public class SubCategory {
 

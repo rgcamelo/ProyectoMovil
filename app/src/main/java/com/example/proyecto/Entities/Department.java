@@ -1,4 +1,4 @@
-package Entities;
+package com.example.proyecto.Entities;
 
 public class Department {
     public  String Name;

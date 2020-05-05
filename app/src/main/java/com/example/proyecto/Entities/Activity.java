@@ -1,4 +1,4 @@
-package Entities;
+package com.example.proyecto.Entities;
 
 
 public abstract class Activity {
