@@ -16,6 +16,10 @@ public final class Contract {
         public static final String SQL_CREATE_DEPARTMENT_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 + DEPARTMENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_DEPARTMENT_NAME + " TEXT NOT NULL);";
+
+        public static final String SQL_INSERT_DEPARTMENT_TABLE = "INSERT INTO TABLE " + TABLE_NAME + "("
+                + COLUMN_DEPARTMENT_NAME + " )"+"VALUES"
+                + "(Cesar);";
     }
 
     public final static class MunicipalityEntry implements BaseColumns{
@@ -31,6 +35,35 @@ public final class Contract {
                 + COLUMN_DEPARTMENT_ID + "TEXT NOT NULL"
                 + COLUMN_MUNICIPALITY_NAME + " TEXT NOT NULL,"
                 + "FOREIGN KEY(COLUMN_DEPARTMENT_ID) REFERENCES(DEPARTMENT_ID));";
+
+        public static final String SQL_INSERT_MUNICIPALITY_TABLE = "INSERT INTO TABLE " + TABLE_NAME + "("
+                + COLUMN_MUNICIPALITY_NAME + ","+ COLUMN_DEPARTMENT_ID+ ")" + "VALUES"
+                + "('Valledupar',1),"
+                + "('Chiriguana',1),"
+                + "('La Jagua de Ibirico',1),"
+                + "('Agustin Codazzi',1),"
+                + "('Aguachica',1),"
+                + "('El paso',1),"
+                + "('Curumani',1),"
+                + "('Chimichagua',1),"
+                + "('Bosconia',1),"
+                + "('La Paz',1),"
+                + "('Rio de Oro',1),"
+                + "('Becerril',1),"
+                + "('El Copey',1),"
+                + "('Pueblo Bello',1),"
+                + "('Astrea',1),"
+                + "('Pailitas',1),"
+                + "('Tamalameque',1),"
+                + "('San Diego',1),"
+                + "('Pelaya',1),"
+                + "('La Gloria',1),"
+                + "('San Alberto',1),"
+                + "('San Martin',1),"
+                + "('Gamarra',1),"
+                + "('Gonzalez',1),"
+                + "('Manaure Balcon del Cesar',1)";
+
     }
 
     public final static class SubCategoryEntry implements BaseColumns{
