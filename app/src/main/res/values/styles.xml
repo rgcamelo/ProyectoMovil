@@ -8,4 +8,26 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="EditTextBlack" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@color/editColorTextBlack</item>
+        <item name="android:textSize">@dimen/editTextSize</item>
+        <item name="android:textColorPrimary">@color/editColorTextBlack</item>
+        <item name="colorAccent">@color/editColorTextBlack</item>
+        <item name="colorControlNormal">@color/editColorTextBlack</item>
+        <item name="colorControlActivated">@color/editColorTextBlack</item>
+    </style>
+
+    <style name="raised_button_dark" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
 </resources>
