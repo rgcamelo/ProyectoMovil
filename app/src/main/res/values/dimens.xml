@@ -3,4 +3,6 @@
     <dimen name="heigth_bottombar">70dp</dimen>
     <dimen name="editTextSize">22sp</dimen>
     <dimen name="edittext_margin_create">10dp</dimen>
+    <dimen name="width_height_buttonCardView">50dp</dimen>
+    <dimen name="size_Text_CardView">15sp</dimen>
 </resources>
