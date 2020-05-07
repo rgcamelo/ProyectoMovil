@@ -7,13 +7,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.proyecto.Entities.Activity;
+import com.example.proyecto.Entities.Event;
+
 public class ConnectionSQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "EMI.db";
     private static final int DATABASE_VERSION = 1;
 
-    public ConnectionSQLiteHelper(Context context,String name,SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public ConnectionSQLiteHelper(Context context){
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
 
@@ -35,15 +38,10 @@ public class ConnectionSQLiteHelper extends SQLiteOpenHelper {
 
     }
 
-    public void UpData(){
+    public void InsertEvent(Event event){
 
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues valuesDepartmen = new ContentValues();
-        valuesDepartmen.put(Contract.DepartmentEntry.COLUMN_DEPARTMENT_NAME,"Cesar");
-        ContentValues valuesMunicipality = new ContentValues();
-        valuesMunicipality.put(Contract.MunicipalityEntry.COLUMN_MUNICIPALITY_NAME,"Valledupar");
-        valuesMunicipality.put(Contract.MunicipalityEntry.COLUMN_DEPARTMENT_ID,1);
-
+        ContentValues values = new ContentValues();
 
 
     }

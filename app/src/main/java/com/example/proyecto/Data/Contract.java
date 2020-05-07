@@ -2,41 +2,43 @@ package com.example.proyecto.Data;
 
 import android.provider.BaseColumns;
 
+import com.example.proyecto.Entities.SubCategory;
+
 public final class Contract {
 
     private Contract(){}
 
     public final static class DepartmentEntry implements BaseColumns{
-
         public final static String TABLE_NAME = "Department";
-        public final static String DEPARTMENT_ID = BaseColumns._ID;
+        public final static String _ID = BaseColumns._ID;
         public final static String COLUMN_DEPARTMENT_NAME = "name";
+        public final static String DEPARTMENT_ID = "department"+_ID;
 
 
         public static final String SQL_CREATE_DEPARTMENT_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 + DEPARTMENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_DEPARTMENT_NAME + " TEXT NOT NULL);";
 
-        public static final String SQL_INSERT_DEPARTMENT_TABLE = "INSERT INTO TABLE " + TABLE_NAME + "("
+        public static final String SQL_INSERT_DEPARTMENT_TABLE = "INSERT INTO " + TABLE_NAME + "("
                 + COLUMN_DEPARTMENT_NAME + " )"+"VALUES"
-                + "(Cesar);";
+                + "('Cesar');";
     }
 
     public final static class MunicipalityEntry implements BaseColumns{
-
         public final static String TABLE_NAME = "Municipality";
-        public final static String MUNICIPALITY_ID = BaseColumns._ID;
-        public final static String COLUMN_DEPARTMENT_ID = "department_id";
+        public final static String _ID = BaseColumns._ID;
+        public final static String MUNICIPALITY_ID = "municipality"+_ID;
+        public final static String COLUMN_DEPARTMENT_ID = "department";
         public final static String COLUMN_MUNICIPALITY_NAME = "name";
-
+        public final static String FOREIGN_KEY_DEPARTMENT = DepartmentEntry.DEPARTMENT_ID;
 
         public static final String SQL_CREATE_MUNICIPALITY_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 + MUNICIPALITY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + COLUMN_DEPARTMENT_ID + "TEXT NOT NULL"
+                + COLUMN_DEPARTMENT_ID + " INTEGER,"
                 + COLUMN_MUNICIPALITY_NAME + " TEXT NOT NULL,"
-                + "FOREIGN KEY(COLUMN_DEPARTMENT_ID) REFERENCES(DEPARTMENT_ID));";
+                + "FOREIGN KEY("+COLUMN_DEPARTMENT_ID+") REFERENCES "+DepartmentEntry.TABLE_NAME +"("+FOREIGN_KEY_DEPARTMENT+"));";
 
-        public static final String SQL_INSERT_MUNICIPALITY_TABLE = "INSERT INTO TABLE " + TABLE_NAME + "("
+        public static final String SQL_INSERT_MUNICIPALITY_TABLE = "INSERT INTO " + TABLE_NAME + "("
                 + COLUMN_MUNICIPALITY_NAME + ","+ COLUMN_DEPARTMENT_ID+ ")" + "VALUES"
                 + "('Valledupar',1),"
                 + "('Chiriguana',1),"
@@ -88,9 +90,9 @@ public final class Contract {
 
         public static final String SQL_CREATE_CATEGORY_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 + CATEGORY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + COLUMN_SUBCATEGORY_ID + "TEXT NOT NULL"
+                + COLUMN_SUBCATEGORY_ID + " INTEGER NOT NULL,"
                 + COLUMN_CATEGORY_NAME + " TEXT NOT NULL,"
-                + "FOREIGN KEY(COLUMN_SUBCATEGORY_ID) REFERENCES(SUBCATEGORY_ID));";
+                + "FOREIGN KEY("+COLUMN_SUBCATEGORY_ID+") REFERENCES "+ SubCategoryEntry.TABLE_NAME +"("+SubCategoryEntry.SUBCATEGORY_ID+"));";
     }
 
     public final static class EventEntry implements BaseColumns{
@@ -101,7 +103,8 @@ public final class Contract {
         public final static String COLUMN_EVENT_DESCRIPTION = "description";
         public final static String COLUMN_EVENT_LOCATION = "location";
         public final static String COLUMN_CATEGORY_ID = "category";
-        public final static String COLUMN_MUNICIPALITY_ID = "category";
+        public final static String COLUMN_MUNICIPALITY_ID = "municipality";
+        public final static String COLUMN_EVENT_STATE = "municipality";
         public final static String COLUMN_EVENT_PHONE = "phone";
         public final static String COLUMN_EVENT_START = "dateStart";
         public final static String COLUMN_EVENT_END = "dateEnd";
@@ -111,13 +114,14 @@ public final class Contract {
                 + COLUMN_EVENT_NAME + " TEXT NOT NULL,"
                 + COLUMN_EVENT_DESCRIPTION + " TEXT,"
                 + COLUMN_EVENT_LOCATION + " TEXT NOT NULL,"
-                + COLUMN_CATEGORY_ID + " TEXT NOT NULL,"
-                + COLUMN_MUNICIPALITY_ID + " ,"
+                + COLUMN_CATEGORY_ID + " INTEGER NOT NULL,"
+                + COLUMN_MUNICIPALITY_ID + " INTEGER,"
                 + COLUMN_EVENT_PHONE + " TEXT,"
+                + COLUMN_EVENT_STATE + " TEXT,"
                 + COLUMN_EVENT_START + "DATE NOT NULL,"
                 + COLUMN_EVENT_END + "DATE NOT NULL,"
-                + "FOREIGN KEY(COLUMN_MUNICIPALITY_ID) REFERENCES(MUNICIPALITY_ID),"
-                + "FOREIGN KEY(COLUMN_CATEGORY_ID) REFERENCES(CATEGORY_ID));";
+                + "FOREIGN KEY(" + COLUMN_MUNICIPALITY_ID + ") REFERENCES " + MunicipalityEntry.TABLE_NAME + "(" + MunicipalityEntry._ID+"),"
+                + "FOREIGN KEY(" + COLUMN_CATEGORY_ID + ") REFERENCES "+ CategoryEntry.TABLE_NAME +"("+ CategoryEntry._ID +"));";
     }
 
     public final static class PlaceEntry implements BaseColumns{
@@ -128,7 +132,7 @@ public final class Contract {
         public final static String COLUMN_PLACE_DESCRIPTION = "description";
         public final static String COLUMN_PLACE_LOCATION = "location";
         public final static String COLUMN_CATEGORY_ID = "category";
-        public final static String COLUMN_MUNICIPALITY_ID = "category";
+        public final static String COLUMN_MUNICIPALITY_ID = "municipality";
         public final static String COLUMN_PLACE_PHONE = "phone";
         public final static String COLUMN_PLACE_SCHEDULE = "Schedule";
 
@@ -137,12 +141,12 @@ public final class Contract {
                 + COLUMN_PLACE_NAME + " TEXT NOT NULL,"
                 + COLUMN_PLACE_DESCRIPTION + " TEXT,"
                 + COLUMN_PLACE_LOCATION + " TEXT NOT NULL,"
-                + COLUMN_CATEGORY_ID + " TEXT NOT NULL,"
-                + COLUMN_MUNICIPALITY_ID + " ,"
+                + COLUMN_CATEGORY_ID + " INTEGER NOT NULL,"
+                + COLUMN_MUNICIPALITY_ID + " INTEGER,"
                 + COLUMN_PLACE_PHONE + " TEXT,"
                 + COLUMN_PLACE_SCHEDULE + "TEXT NOT NULL,"
-                + "FOREIGN KEY(COLUMN_MUNICIPALITY_ID) REFERENCES(MUNICIPALITY_ID),"
-                + "FOREIGN KEY(COLUMN_CATEGORY_ID) REFERENCES(CATEGORY_ID));";
+                + "FOREIGN KEY(" + COLUMN_MUNICIPALITY_ID + ") REFERENCES " + MunicipalityEntry.TABLE_NAME + "(" + MunicipalityEntry._ID+"),"
+                + "FOREIGN KEY(" + COLUMN_CATEGORY_ID + ") REFERENCES "+ CategoryEntry.TABLE_NAME +"("+ CategoryEntry._ID +"));";
     }
 
 

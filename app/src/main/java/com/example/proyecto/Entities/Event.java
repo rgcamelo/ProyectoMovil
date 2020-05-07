@@ -1,21 +1,25 @@
 package com.example.proyecto.Entities;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Event extends Activity {
 
-    private Date DateStart;
-    private Date DateEnd;
+    public Calendar DateStart;
+    public Calendar DateEnd;
 
-    public Event(String name, String location, String description, String phone, String state, String type, Category category, Municipality municipality, Date dateStart, Date dateEnd){
+    public Event(){
+
+    }
+
+    public Event(String name, String location, String description, String phone, String state, Category category, Municipality municipality, Calendar dateStart, Calendar dateEnd){
 
         Name = name;
         Location = location;
         Description = description;
         Phone = phone;
         State = state;
-        Type = type;
         Municipality = municipality;
         Category = category;
         DateStart = dateStart;
