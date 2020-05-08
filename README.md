@@ -2,7 +2,7 @@
 Proyecto EMI - Solution Code
 ==================================
 
-Aplicacion pensada para ser la guia turistica del Cesar indicando sitios de interes y anunciando eventos de la Region. Esta version de la solucion cuenta solo con el apartado de "Home" 
+Aplicación pensada para ser la guía turística del Cesar indicando sitios de interés y anunciando eventos de la Región. Esta versión de la solución cuenta solo con el apartado de "Home"
 
 Introduction
 ------------
