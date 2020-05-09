@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:src="@drawable/monumento_de_la_pilonera_mayor"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:textColor="#262626"
+                android:layout_below="@id/image"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="16dp"
+                android:text="La Pilonera Mayor"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_below="@id/title"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:maxLines="3"
+                android:drawablePadding="10dp"
+                android:ellipsize="end"
+                android:text="@string/loremipsun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/desc"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="114dp"
+                android:layout_marginLeft="114dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="4dp">
+
+                <CheckBox
+                    android:id="@+id/hearth_cardview"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/checboxlike_selector"
+                    android:button="@null"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/save_cardview"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ic_receipt"
+                    android:button="@null"></CheckBox>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

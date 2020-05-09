@@ -4,4 +4,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textbutton_create">Crear</string>
+    <string name="loremipsun">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor ex dui. In maximus vel purus eget aliquam. Vivamus sit amet ultrices nisi. Praesent suscipit orci ut faucibus sollicitudin. Cras rhoncus mauris at porta suscipit. Phasellus et euismod odio, in mollis nulla. Maecenas at lobortis libero. Ut scelerisque maximus metus, et tempus turpis pharetra sed. Aliquam at condimentum ligula, a fringilla felis. Fusce lacus nisi, consectetur egestas tortor non, finibus dapibus sem.</string>
 </resources>

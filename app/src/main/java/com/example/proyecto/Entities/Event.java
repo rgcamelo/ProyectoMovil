@@ -9,9 +9,14 @@ public class Event extends Activity {
     public Calendar DateStart;
     public Calendar DateEnd;
 
-    public Event(){
 
+
+    public Event(int image, String title, String desc) {
+        this.Image = image;
+        this.Name = title;
+        this.Description = desc;
     }
+
 
     public Event(String name, String location, String description, String phone, String state, Category category, Municipality municipality, Calendar dateStart, Calendar dateEnd){
 
