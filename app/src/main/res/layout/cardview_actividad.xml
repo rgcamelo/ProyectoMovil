@@ -1,138 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pictureCard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:cardCornerRadius="20dp"
     android:layout_margin="5dp"
-    >
+    app:cardCornerRadius="20dp">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/ImageView_Card"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/monumento_de_la_pilonera_mayor"
-            android:scaleType="centerCrop"
-            >
-        </ImageView>
+    <ImageView
+        android:id="@+id/ImageView_Card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/monumento_de_la_pilonera_mayor"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="#93e5e5e5"
+        app:layout_constraintBottom_toBottomOf="@+id/ImageView_Card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:id="@+id/info_CardView"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="#93e5e5e5">
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:minHeight="120dp">
 
-            <RelativeLayout
-                android:id="@+id/info_CardView"
-                android:layout_width="200dp"
+            <TextView
+                android:id="@+id/UserNameCard"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Nombre de la Actividad"
+                android:textColor="@color/editColorTextBlack"
+                android:textSize="25dp"
+                android:textStyle="bold">
+
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/firstWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/UserNameCard"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:minHeight="120dp">
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:text="Tipo de Evento"
+                android:textColor="@color/editColorTextBlack"
+                android:textSize="@dimen/size_Text_CardView">
 
-                <TextView
-                    android:id="@+id/UserNameCard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nombre de la Actividad"
-                    android:textColor="@color/editColorTextBlack"
-                    android:textStyle="bold"
-                    android:textSize="25dp">
+            </TextView>
 
-                </TextView>
-
-
-                <TextView
-                    android:id="@+id/firstWord"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/UserNameCard"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="12dp"
-                    android:text="Tipo de Evento"
-                    android:textColor="@color/editColorTextBlack"
-                    android:textSize="@dimen/size_Text_CardView">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/NumberLikeCard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/firstWord"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Distancia en Km"
-                    android:textColor="@color/editColorTextBlack"
-                    android:textSize="@dimen/size_Text_CardView">
+            <TextView
+                android:id="@+id/NumberLikeCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/firstWord"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Distancia en Km"
+                android:textColor="@color/editColorTextBlack"
+                android:textSize="@dimen/size_Text_CardView">
 
 
-                </TextView>
-
-
-            </RelativeLayout>
-
-
-            <LinearLayout
-                android:layout_width="69dp"
-                android:layout_height="121dp"
-                android:layout_alignParentTop="true"
-                android:layout_gravity="bottom|right"
-
-                android:layout_marginStart="-13dp"
-                android:layout_marginLeft="-13dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginBottom="20dp"
-                android:layout_toEndOf="@+id/info_CardView"
-                android:layout_toRightOf="@+id/info_CardView"
-                android:orientation="vertical">
-
-                <CheckBox
-                    android:id="@+id/like_checkbox_card"
-                    android:layout_width="@dimen/width_height_buttonCardView"
-                    android:layout_height="@dimen/width_height_buttonCardView"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/checboxlike_selector"
-                    android:button="@null">
-
-                </CheckBox>
-
-                <CheckBox
-                    android:id="@+id/save_checkbox_card"
-                    android:layout_width="@dimen/width_height_buttonCardView"
-                    android:layout_height="@dimen/width_height_buttonCardView"
-                    android:background="@drawable/ic_receipt"
-                    android:button="@null"
-
-                    >
-
-                </CheckBox>
-
-
-            </LinearLayout>
+            </TextView>
 
 
         </RelativeLayout>
 
 
-    </FrameLayout>
+        <LinearLayout
+            android:layout_width="69dp"
+            android:layout_height="121dp"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="bottom|right"
 
-</androidx.cardview.widget.CardView>
+            android:layout_marginStart="-13dp"
+            android:layout_marginLeft="-13dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toEndOf="@+id/info_CardView"
+            android:layout_toRightOf="@+id/info_CardView"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/like_checkbox_card"
+                android:layout_width="@dimen/width_height_buttonCardView"
+                android:layout_height="@dimen/width_height_buttonCardView"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/checboxlike_selector"
+                android:button="@null">
+
+            </CheckBox>
+
+            <CheckBox
+                android:id="@+id/save_checkbox_card"
+                android:layout_width="@dimen/width_height_buttonCardView"
+                android:layout_height="@dimen/width_height_buttonCardView"
+                android:background="@drawable/ic_receipt"
+                android:button="@null"
+
+                >
+
+            </CheckBox>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
