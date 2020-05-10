@@ -36,13 +36,13 @@ public class Event extends Activity {
 
         String pattern = "MM-dd-yyyy";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String dateStart = simpleDateFormat.format(DateStart);
-        String dateEnd = simpleDateFormat.format(DateEnd);
+        String dateStart = simpleDateFormat.format(DateStart.getTime());
+        String dateEnd = simpleDateFormat.format(DateEnd.getTime());
         String formatHours = " HH:mm";
         SimpleDateFormat simpleDateHours = new SimpleDateFormat(formatHours);
-        String hourStart = simpleDateHours.format(DateStart);
-        String hourEnd = simpleDateHours.format(DateEnd);
+        String hourStart = simpleDateHours.format(DateStart.getTime());
+        String hourEnd = simpleDateHours.format(DateEnd.getTime());
 
-        return  "El evento esta disponible desde el" + dateStart +"a las "+ hourStart + " hasta el " + dateEnd + "a las " + hourEnd;
+        return  "El evento esta disponible desde el " + dateStart +" a las "+ hourStart + " hasta el " + dateEnd + " a las " + hourEnd;
     }
 }

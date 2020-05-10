@@ -12,6 +12,6 @@ public class Category {
 
     @Override
     public String toString() {
-        return Name + SubCategory.toString();
+        return Name + "," + SubCategory.toString();
     }
 }

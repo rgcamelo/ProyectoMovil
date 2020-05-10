@@ -1,5 +1,7 @@
 package com.example.proyecto.Entities;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 
 public class Place extends Activity {
@@ -27,16 +29,21 @@ public class Place extends Activity {
 
     public String AddDays(int numDay,String hourOpen, String hourEnd){
         boolean dayExist = false;
-        for (Day day:Schedule)
+        if(Schedule != null)
         {
-            if(day.NumDay == numDay)
+            for (Day day:Schedule)
             {
-                dayExist = true;
+                if(day.NumDay == numDay)
+                {
+                    dayExist = true;
+
+                }
             }
         }
-        if(numDay>0 && numDay<=7 && !dayExist)
+        if(numDay>0 && numDay<=7 && dayExist==false)
         {
             Day day = new Day(numDay, hourOpen, hourEnd);
+            Schedule.add(day);
             return "Se añadio exitosamente";
         }
         else{
@@ -46,7 +53,18 @@ public class Place extends Activity {
 
     @Override
     public String Availability() {
-        return null;
+        StringBuilder response = new StringBuilder("El Sitio de interes: " + Name + " esta disponible los:\n" );
+        for (Day day:Schedule) {
+            String schedule = day.NumDay + " desde las "+ day.HourOpen + " hasta las " + day.HourClose + "\n";
+            response.append(schedule);
+        }
+        return response.toString();
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return Name + "," + Location + "," + Description + "," + Type;
     }
 
     public static class Day{

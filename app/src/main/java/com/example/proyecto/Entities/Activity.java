@@ -112,4 +112,5 @@ public abstract class Activity {
     public void setAssistant(int assistant) {
         Assistant = assistant;
     }
+
 }

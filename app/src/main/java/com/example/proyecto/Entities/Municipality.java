@@ -11,6 +11,6 @@ public class Municipality {
 
     @Override
     public String toString() {
-        return Name + department;
+        return Name +"/"+ department;
     }
 }
