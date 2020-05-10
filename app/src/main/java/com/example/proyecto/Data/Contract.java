@@ -103,7 +103,7 @@ public final class Contract {
         public final static String COLUMN_EVENT_DESCRIPTION = "description";
         public final static String COLUMN_EVENT_LOCATION = "location";
         public final static String COLUMN_CATEGORY_ID = "category";
-        public final static String COLUMN_MUNICIPALITY_ID = "municipality";
+        public final static String COLUMN_MUNICIPALITY_ID = "municipality_id";
         public final static String COLUMN_EVENT_STATE = "municipality";
         public final static String COLUMN_EVENT_PHONE = "phone";
         public final static String COLUMN_EVENT_START = "dateStart";
