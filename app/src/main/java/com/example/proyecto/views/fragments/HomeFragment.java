@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -52,9 +53,10 @@ public class HomeFragment extends Fragment {
         viewPager.setPadding(5, 43, 5, 0);
 
         Integer[] colors_temp = {
-                getResources().getColor(R.color.color1),
-                getResources().getColor(R.color.color2),
-                getResources().getColor(R.color.color3),
+                ContextCompat.getColor(getContext(), R.color.color1),
+                ContextCompat.getColor(getContext(), R.color.color2),
+                ContextCompat.getColor(getContext(), R.color.color3),
+
         };
 
         colors = colors_temp;
