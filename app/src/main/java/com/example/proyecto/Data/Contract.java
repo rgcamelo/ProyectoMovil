@@ -127,7 +127,7 @@ public final class Contract {
     public final static class PlaceEntry implements BaseColumns{
 
         public final static String TABLE_NAME = "Place";
-        public final static String EVENT_ID = BaseColumns._ID;
+        public final static String PLACE_ID = BaseColumns._ID;
         public final static String COLUMN_PLACE_NAME = "name";
         public final static String COLUMN_PLACE_DESCRIPTION = "description";
         public final static String COLUMN_PLACE_LOCATION = "location";
@@ -137,7 +137,7 @@ public final class Contract {
         public final static String COLUMN_PLACE_SCHEDULE = "Schedule";
 
         public static final String SQL_CREATE_PLACE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
-                + EVENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + PLACE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_PLACE_NAME + " TEXT NOT NULL,"
                 + COLUMN_PLACE_DESCRIPTION + " TEXT,"
                 + COLUMN_PLACE_LOCATION + " TEXT NOT NULL,"

@@ -35,14 +35,9 @@ public class ConnectionSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionOld, int versionNew) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + Contract.EventEntry.TABLE_NAME);
+        onCreate(db);
     }
 
-    public void InsertEvent(Event event){
 
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-
-
-    }
 }
