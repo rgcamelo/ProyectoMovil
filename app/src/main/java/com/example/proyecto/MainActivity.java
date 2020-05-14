@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.proyecto.views.ContainerActivity;
+import com.example.proyecto.Controller.ContainerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
