@@ -9,13 +9,13 @@ import androidx.test.core.app.ApplicationProvider;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.example.proyecto.Data.ConnectionSQLiteHelper;
-import com.example.proyecto.Data.Contract;
-import com.example.proyecto.Entities.Activity;
-import com.example.proyecto.Entities.Category;
-import com.example.proyecto.Entities.Event;
-import com.example.proyecto.Entities.Municipality;
-import com.example.proyecto.Entities.SubCategory;
+import com.example.proyecto.Model.Data.ConnectionSQLiteHelper;
+import com.example.proyecto.Model.Data.Contract;
+import com.example.proyecto.Model.Entities.Activity;
+import com.example.proyecto.Model.Entities.Category;
+import com.example.proyecto.Model.Entities.Event;
+import com.example.proyecto.Model.Entities.Municipality;
+import com.example.proyecto.Model.Entities.SubCategory;
 
 import org.junit.After;
 import org.junit.Before;
@@ -230,7 +230,7 @@ public class DataBaseTest {
         assertEquals(0,id);
     }
 
-    public void consult(){
+   /* public void consult(){
         SQLiteDatabase dbS = dbHelper.getReadableDatabase();
 
         String[] projection = {
@@ -262,7 +262,7 @@ public class DataBaseTest {
         String queryResult = currentID +","+ currentName+","+currentDescription;
 
         assertEquals("1,Marcha por la paz,Esta marcha se realiza para...",queryResult);
-    }
+    }*/
 
 
 }
