@@ -1,4 +1,4 @@
-package com.example.proyecto.views.fragments;
+package com.example.proyecto.Controller.fragments;
 
 import android.os.Bundle;
 

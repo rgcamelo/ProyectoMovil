@@ -1,4 +1,4 @@
-package com.example.proyecto.views;
+package com.example.proyecto.Controller;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.proyecto.Entities.Activity;
+import com.example.proyecto.Model.Entities.Activity;
 import com.example.proyecto.R;
-import com.example.proyecto.views.fragments.HomeFragment;
+import com.example.proyecto.Controller.fragments.HomeFragment;
 
 import java.util.List;
 
@@ -56,15 +56,15 @@ public class AdapterActivityHomeCardView extends PagerAdapter {
         title.setText(activities.get(position).getName());
         desc.setText(activities.get(position).getDescription());
 
-        /*view.setOnClickListener(new View.OnClickListener() {
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailActivity.class);
-                intent.putExtra("param", models.get(position).getTitle());
+                intent.putExtra("actividad", activities.get(position));
                 context.startActivity(intent);
                 // finish();
             }
-        });*/
+        });
 
         container.addView(view, 0);
         return view;

@@ -1,4 +1,4 @@
-package com.example.proyecto.views.fragments;
+package com.example.proyecto.Controller.fragments;
 
 import android.animation.ArgbEvaluator;
 import android.os.Bundle;
@@ -14,10 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 
-import com.example.proyecto.Entities.Activity;
-import com.example.proyecto.Entities.Event;
+import com.example.proyecto.Model.Entities.Activity;
+import com.example.proyecto.Model.Entities.Event;
 import com.example.proyecto.R;
-import com.example.proyecto.views.AdapterActivityHomeCardView;
+import com.example.proyecto.Controller.AdapterActivityHomeCardView;
 
 import java.util.ArrayList;
 import java.util.List;

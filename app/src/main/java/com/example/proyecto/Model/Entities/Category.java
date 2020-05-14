@@ -1,4 +1,4 @@
-package com.example.proyecto.Entities;
+package com.example.proyecto.Model.Entities;
 
 public class Category {
 
@@ -12,6 +12,6 @@ public class Category {
 
     @Override
     public String toString() {
-        return Name + "," + SubCategory.toString();
+        return Name + SubCategory.toString();
     }
 }

@@ -1,4 +1,4 @@
-package com.example.proyecto.Entities;
+package com.example.proyecto.Model.Entities;
 
 public class SubCategory {
 

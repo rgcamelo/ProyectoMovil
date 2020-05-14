@@ -1,4 +1,4 @@
-package com.example.proyecto.Data;
+package com.example.proyecto.Model.Data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,14 +6,16 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+import com.example.proyecto.Model.Data.Contract;
+import com.example.proyecto.Model.Entities.Activity;
+import com.example.proyecto.Model.Entities.Event;
 
-import com.example.proyecto.Entities.Activity;
-import com.example.proyecto.Entities.Event;
 
 public class ConnectionSQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "EMI.db";
     private static final int DATABASE_VERSION = 1;
+
 
     public ConnectionSQLiteHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

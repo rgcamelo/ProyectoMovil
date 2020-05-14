@@ -1,7 +1,9 @@
-package com.example.proyecto.Entities;
+package com.example.proyecto.Model.Entities;
 
 
-public abstract class Activity {
+import java.io.Serializable;
+
+public abstract class Activity implements Serializable {
 
     public int Image;
     public String Name;
@@ -81,19 +83,19 @@ public abstract class Activity {
         Type = type;
     }
 
-    public com.example.proyecto.Entities.Municipality getMunicipality() {
+    public Municipality getMunicipality() {
         return Municipality;
     }
 
-    public void setMunicipality(com.example.proyecto.Entities.Municipality municipality) {
+    public void setMunicipality(Municipality municipality) {
         Municipality = municipality;
     }
 
-    public com.example.proyecto.Entities.Category getCategory() {
+    public Category getCategory() {
         return Category;
     }
 
-    public void setCategory(com.example.proyecto.Entities.Category category) {
+    public void setCategory(Category category) {
         Category = category;
     }
 
@@ -112,5 +114,4 @@ public abstract class Activity {
     public void setAssistant(int assistant) {
         Assistant = assistant;
     }
-
 }

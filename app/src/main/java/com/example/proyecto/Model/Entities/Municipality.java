@@ -1,4 +1,4 @@
-package com.example.proyecto.Entities;
+package com.example.proyecto.Model.Entities;
 
 public class Municipality {
 
@@ -11,6 +11,6 @@ public class Municipality {
 
     @Override
     public String toString() {
-        return Name +"/"+ department;
+        return Name + department;
     }
 }

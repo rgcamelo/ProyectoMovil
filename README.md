@@ -1,5 +1,5 @@
 
-Proyecto EMI - Solution Code
+Proyecto TuRuta Cesar - Solution Code
 ==================================
 
 Aplicación pensada para ser la guía turística del Cesar indicando sitios de interés y anunciando eventos de la Región. Esta versión de la solución cuenta solo con el apartado de "Home"
@@ -18,16 +18,16 @@ Esta versión de la solución cuenta con Home y un avance de Map.
 Getting Started AndroidStudio
 ---------------
 
-1. Descargue el código.
-2. Abre el codigo en AndroidStudio.
-3. Ejecute la aplicación.
+1. Descargar el código.
+2. Abrir el codigo en AndroidStudio.
+3. Ejecutar la aplicación.
 
 Getting Started APK
 ---------------
 
-1. Descargue el APK.
-2. Habilite el sistema para aceptar instalación de aplicación que no vengan de GooglePlay
-3. Instale el APK.
+1. Descargar el APK.
+2. Habilitar el sistema para aceptar instalación de aplicación que no vengan de GooglePlay
+3. Instalar el APK.
 
 
 License

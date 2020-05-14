@@ -1,4 +1,4 @@
-package com.example.proyecto.views;
+package com.example.proyecto.Controller;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,11 +9,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.proyecto.R;
-import com.example.proyecto.views.fragments.HomeFragment;
-import com.example.proyecto.views.fragments.ManagementFragment;
-import com.example.proyecto.views.fragments.MapFragment;
-import com.example.proyecto.views.fragments.ProfileFragment;
-import com.example.proyecto.views.fragments.SearchFragment;
+import com.example.proyecto.Controller.fragments.HomeFragment;
+import com.example.proyecto.Controller.fragments.ManagementFragment;
+import com.example.proyecto.Controller.fragments.MapFragment;
+import com.example.proyecto.Controller.fragments.ProfileFragment;
+import com.example.proyecto.Controller.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ContainerActivity extends AppCompatActivity {
