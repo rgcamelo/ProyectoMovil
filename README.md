@@ -26,7 +26,7 @@ Getting Started APK
 ---------------
 
 1. Descargar el APK.
-2. Habilitar el sistema para aceptar instalación de aplicación que no vengan de GooglePlay
+2. Habilitar el sistema para aceptar instalación de aplicaciones que no vengan de GooglePlay
 3. Instalar el APK.
 
 
