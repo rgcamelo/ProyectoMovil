@@ -83,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:background="@drawable/ic_receipt"
+                        android:background="@drawable/checkboxbookmark24_selector"
                         android:button="@null"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
