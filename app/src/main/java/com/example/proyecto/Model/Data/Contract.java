@@ -2,8 +2,6 @@ package com.example.proyecto.Model.Data;
 
 import android.provider.BaseColumns;
 
-import com.example.proyecto.Model.Entities.SubCategory;
-
 public final class Contract {
 
     private Contract(){}

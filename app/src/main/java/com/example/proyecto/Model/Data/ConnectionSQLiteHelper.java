@@ -1,14 +1,8 @@
 package com.example.proyecto.Model.Data;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import androidx.annotation.Nullable;
-import com.example.proyecto.Model.Data.Contract;
-import com.example.proyecto.Model.Entities.Activity;
-import com.example.proyecto.Model.Entities.Event;
 
 
 public class ConnectionSQLiteHelper extends SQLiteOpenHelper {

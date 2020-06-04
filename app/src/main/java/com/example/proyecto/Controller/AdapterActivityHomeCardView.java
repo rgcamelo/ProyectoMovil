@@ -13,7 +13,6 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.proyecto.Model.Entities.Activity;
 import com.example.proyecto.R;
-import com.example.proyecto.Controller.fragments.HomeFragment;
 
 import java.util.List;
 

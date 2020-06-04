@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="when">
+        <item>Cuando Sea</item>
+        <item>Hoy</item>
+        <item>Mañana</item>
+        <item>Este fin de semana</item>
+        <item>El proximo mes</item>
+        <item>Selecciona una fecha</item>
+    </string-array>
+
+</resources>

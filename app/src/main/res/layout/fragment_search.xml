@@ -5,12 +5,159 @@
     android:layout_height="match_parent"
     tools:context=".Controller.fragments.SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Search Fragment"
-        android:gravity="center"
-        />
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:src="@drawable/ic_search_black_24dp">
+
+            </ImageView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="Buscar..."
+                android:textSize="30sp"
+                android:textStyle="bold">
+
+            </EditText>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+
+            <CheckBox
+                android:id="@+id/rb_lugar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radio_flat_selector"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Lugar"
+                android:textColor="@drawable/radio_flat_text_selector"
+                android:textSize="15sp"
+                android:textStyle="bold"></CheckBox>
+
+            <CheckBox
+                android:id="@+id/rb_evento"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:checked="true"
+                android:layout_weight="1"
+                android:background="@drawable/radio_flat_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Evento"
+                android:textColor="@drawable/radio_flat_text_selector"
+                android:textSize="15sp"
+                android:textStyle="bold">
+
+            </CheckBox>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/cuando_SearchPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Cuando">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/cuandoet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text="Cuando sea"
+                android:textColor="@color/editColorTextBlack"
+                android:textSize="30sp"
+                android:textStyle="bold"></EditText>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Donde">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:focusable="false"
+            android:text="Donde sea"
+            android:textColor="@color/editColorTextBlack"
+            android:textSize="30sp"
+            android:textStyle="bold"></EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Me interesa">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:focusable="false"
+            android:text="Cualquier cosa"
+            android:textColor="@color/editColorTextBlack"
+            android:textSize="30sp"
+            android:textStyle="bold"></EditText>
+
+        <Button
+            android:id="@+id/btn_search_searchfragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="50dp"
+            android:background="@color/colorPrimary"
+            android:text="Buscar"
+            android:textColor="@color/editColorTextWhite">
+
+        </Button>
+
+
+    </LinearLayout>
 
 </FrameLayout>

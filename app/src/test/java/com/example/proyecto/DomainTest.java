@@ -1,8 +1,5 @@
 package com.example.proyecto;
 
-import android.app.Application;
-import android.content.Context;
-
 import com.example.proyecto.Data.ConnectionSQLiteHelper;
 import com.example.proyecto.Entities.Activity;
 import com.example.proyecto.Entities.Category;
@@ -12,13 +9,10 @@ import com.example.proyecto.Entities.Municipality;
 import com.example.proyecto.Entities.Place;
 import com.example.proyecto.Entities.SubCategory;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 import static org.junit.Assert.*;

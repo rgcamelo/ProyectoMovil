@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "446028006724",
+    "firebase_url": "https://iron-figure-276804.firebaseio.com",
+    "project_id": "iron-figure-276804",
+    "storage_bucket": "iron-figure-276804.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446028006724:android:eee866aa68e8e934770311",
+        "android_client_info": {
+          "package_name": "com.example.proyecto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446028006724-dq6v7ghoqsearl1bpcn1s1vmi5kp9b02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzXRPCngC0BHL35VvPHgg149tk_8ffx_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446028006724-dq6v7ghoqsearl1bpcn1s1vmi5kp9b02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

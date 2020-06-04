@@ -10,7 +10,6 @@ import android.view.MenuItem;
 
 import com.example.proyecto.R;
 import com.example.proyecto.Controller.fragments.HomeFragment;
-import com.example.proyecto.Controller.fragments.ManagementFragment;
 import com.example.proyecto.Controller.fragments.MapFragment;
 import com.example.proyecto.Controller.fragments.ProfileFragment;
 import com.example.proyecto.Controller.fragments.SearchFragment;
