@@ -6,10 +6,14 @@ public class Place extends Activity {
 
     public ArrayList<Day> Schedule;
 
-    public Place(int image, String title, String desc) {
+    public Place(String image, String title, String desc) {
         this.Image = image;
         this.Name = title;
         this.Description = desc;
+    }
+
+    public Place(){
+
     }
 
     public Place(String name, String location, String description, String phone, String state, String type,Category category, Municipality municipality){

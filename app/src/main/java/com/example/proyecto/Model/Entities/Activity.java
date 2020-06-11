@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 public abstract class Activity implements Serializable {
 
-    public int Image;
+    public String Image;
     public String Name;
     public String Location;
     public String Description;
@@ -27,11 +27,11 @@ public abstract class Activity implements Serializable {
 
     public abstract String Availability();
 
-    public int getImage() {
+    public String getImage() {
         return Image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         Image = image;
     }
 

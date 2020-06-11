@@ -1,6 +1,8 @@
 package com.example.proyecto.Controller.fragments;
 
 import android.animation.ArgbEvaluator;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,9 +15,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
+import com.example.proyecto.Controller.AdapterlistOptionSearch;
 import com.example.proyecto.Model.Entities.Activity;
 import com.example.proyecto.Model.Entities.Event;
+import com.example.proyecto.Model.Entities.Place;
 import com.example.proyecto.R;
 import com.example.proyecto.Controller.AdapterActivityHomeCardView;
 import com.google.firebase.database.DataSnapshot;
@@ -46,91 +51,19 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        activities = new ArrayList<>();
-        activities.add(new Event(R.drawable.monumento_de_la_pilonera_mayor, "Pilonera Mayor", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor ex dui. In maximus vel purus eget aliquam. Vivamus sit amet ultrices nisi. Praesent suscipit orci ut faucibus sollicitudin. Cras rhoncus mauris at porta suscipit. Phasellus et euismod odio, in mollis nulla. Maecenas at lobortis libero. Ut scelerisque maximus metus, et tempus turpis pharetra sed. Aliquam at condimentum ligula, a fringilla felis. Fusce lacus nisi, consectetur egestas tortor non, finibus dapibus sem. "));
-        activities.add(new Event(R.drawable.monumento_de_la_pilonera_mayor, "Otra Pilonera Mayor", "Es la piloneramayor"));
-        activities.add(new Event(R.drawable.monumento_de_la_pilonera_mayor, "Tercera Pilonera Mayor", "Es la piloneramayor"));
+
+        //activities.add(new Event(R.drawable.monumento_de_la_pilonera_mayor, "Pilonera Mayor", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor ex dui. In maximus vel purus eget aliquam. Vivamus sit amet ultrices nisi. Praesent suscipit orci ut faucibus sollicitudin. Cras rhoncus mauris at porta suscipit. Phasellus et euismod odio, in mollis nulla. Maecenas at lobortis libero. Ut scelerisque maximus metus, et tempus turpis pharetra sed. Aliquam at condimentum ligula, a fringilla felis. Fusce lacus nisi, consectetur egestas tortor non, finibus dapibus sem. "));
+        //activities.add(new Event(R.drawable.monumento_de_la_pilonera_mayor, "Otra Pilonera Mayor", "Es la piloneramayor"));
+        //activities.add(new Event(R.drawable.monumento_de_la_pilonera_mayor, "Tercera Pilonera Mayor", "Es la piloneramayor"));
+        cargarlista();
 
 
+        //adapter = new AdapterActivityHomeCardView(activities, getContext());
 
-        adapter = new AdapterActivityHomeCardView(activities, getContext());
 
-        viewPager =  getView().findViewById(R.id.Pager);
-        viewPager.setAdapter(adapter);
-        viewPager.setPadding(5, 43, 5, 0);
-
-        Integer[] colors_temp = {
-                ContextCompat.getColor(getContext(), R.color.color1),
-                ContextCompat.getColor(getContext(), R.color.color2),
-                ContextCompat.getColor(getContext(), R.color.color3),
-
-        };
-
-        colors = colors_temp;
-
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-                if (position < (adapter.getCount() -1) && position < (colors.length - 1)) {
-                    viewPager.setBackgroundColor(
-
-                            (Integer) argbEvaluator.evaluate(
-                                    positionOffset,
-                                    colors[position],
-                                    colors[position + 1]
-                            )
-                    );
-                }
-
-                else {
-                    viewPager.setBackgroundColor(colors[colors.length - 1]);
-                }
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        mDatabase = FirebaseDatabase.getInstance().getReference("5");
-
-        //mDatabase.child("data").addValueEventListener(valueEventListener);
-
-        Query query = mDatabase.child("data").orderByChild("namemunicipality");
-
-        query.addValueEventListener(valueEventListener);
 
     }
 
-    ValueEventListener valueEventListener = new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-            if (dataSnapshot.exists()){
-
-                for ( DataSnapshot ds : dataSnapshot.getChildren()
-                ) {
-                    String name = ds.child("namemunicipality").getValue().toString();
-                    if (name.contains("a") || name.contains("A")){
-                        Log.i("NOMBRE",name);
-                    }
-
-                }
-            }
-        }
-
-        @Override
-        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-        }
-    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -139,5 +72,81 @@ public class HomeFragment extends Fragment {
 
 
         return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    public void cargarlista(){
+        activities = new ArrayList<>();
+        mDatabase = FirebaseDatabase.getInstance().getReference("6");
+        Query query = mDatabase.child("data");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    for ( DataSnapshot ds : dataSnapshot.getChildren()
+                    ) {
+                        String name = ds.child("name").getValue().toString();
+                        String image = ds.child("image").getValue().toString();
+                        String desc = ds.child("description").getValue().toString();
+
+                        Place place = new Place();
+                        place.Name = name;
+                        place.Image = image;
+                        place.Description = desc;
+                        activities.add(place);
+                    }
+
+                    adapter = new AdapterActivityHomeCardView(activities, getContext());
+                    viewPager =  getView().findViewById(R.id.Pager);
+                    viewPager.setAdapter(adapter);
+                    viewPager.setPadding(5, 43, 5, 0);
+
+                    Integer[] colors_temp = {
+                            ContextCompat.getColor(getContext(), R.color.color1),
+                            ContextCompat.getColor(getContext(), R.color.color2),
+                            ContextCompat.getColor(getContext(), R.color.color3),
+
+                    };
+
+                    colors = colors_temp;
+
+                    viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                        @Override
+                        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                            if (position < (adapter.getCount() -1) && position < (colors.length - 1)) {
+                                viewPager.setBackgroundColor(
+
+                                        (Integer) argbEvaluator.evaluate(
+                                                positionOffset,
+                                                colors[position],
+                                                colors[position + 1]
+                                        )
+                                );
+                            }
+
+                            else {
+                                viewPager.setBackgroundColor(colors[colors.length - 1]);
+                            }
+                        }
+
+                        @Override
+                        public void onPageSelected(int position) {
+
+                        }
+
+                        @Override
+                        public void onPageScrollStateChanged(int state) {
+
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

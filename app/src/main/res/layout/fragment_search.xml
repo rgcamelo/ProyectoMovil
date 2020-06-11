@@ -25,6 +25,7 @@
             </ImageView>
 
             <EditText
+                android:id="@+id/etbuscar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -118,9 +119,9 @@
         </TextView>
 
         <EditText
+            android:id="@+id/dondeet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="false"
             android:focusable="false"
             android:text="Donde sea"
             android:textColor="@color/editColorTextBlack"
@@ -136,9 +137,9 @@
         </TextView>
 
         <EditText
+            android:id="@+id/intereset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="false"
             android:focusable="false"
             android:text="Cualquier cosa"
             android:textColor="@color/editColorTextBlack"

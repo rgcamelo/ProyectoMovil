@@ -17,7 +17,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.example.proyecto.Controller.InterestSearchFragmentActivity;
+import com.example.proyecto.Controller.ResultsSearchActivity;
 import com.example.proyecto.Controller.WhenSearchFragmentActivity;
+import com.example.proyecto.Controller.WhereSearchFragmentActivity;
 import com.example.proyecto.R;
 
 /**
@@ -30,7 +33,7 @@ public class SearchFragment extends Fragment {
     }
 
     Button btnsearch;
-    EditText cuando;
+    EditText cuando,donde,interes, buscar;
     CheckBox cblugar, cbevento;
 
 
@@ -39,8 +42,17 @@ public class SearchFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         btnsearch = view.findViewById(R.id.btn_search_searchfragment);
-        cuando = (EditText) view.findViewById(R.id.cuandoet);
+        cargarActivitiesET(view);
         checkedboxes(view);
+        return view;
+    }
+
+    public void cargarActivitiesET(View view){
+        cuando = (EditText) view.findViewById(R.id.cuandoet);
+        donde = (EditText) view.findViewById(R.id.dondeet);
+        interes = (EditText) view.findViewById(R.id.intereset);
+        buscar = (EditText) view.findViewById(R.id.etbuscar);
+
         cuando.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,8 +61,52 @@ public class SearchFragment extends Fragment {
             }
         });
 
-        return view;
+        donde.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getActivity(), WhereSearchFragmentActivity.class);
+                startActivityForResult(intent2,1);
+            }
+        });
 
+        interes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(getActivity(), InterestSearchFragmentActivity.class);
+                startActivityForResult(intent3,2);
+            }
+        });
+
+        btnsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String Lugar="";
+                if (cblugar.isChecked()){
+                    Lugar = "Lugar";
+                }
+                else{
+                    Lugar = "No";
+                }
+
+                String Evento = "";
+                if (cbevento.isChecked()){
+                    Evento = "Evento";
+                }
+                else{
+                    Evento = "No";
+                }
+
+
+                Intent intent4 = new Intent(getActivity(), ResultsSearchActivity.class);
+                intent4.putExtra("textobuscar", buscar.getText().toString() );
+                intent4.putExtra("cuando", cuando.getText().toString());
+                intent4.putExtra("donde", donde.getText().toString());
+                intent4.putExtra("interes", interes.getText().toString());
+                intent4.putExtra("Lugar", Lugar);
+                intent4.putExtra("Evento", Evento);
+                startActivity(intent4);
+            }
+        });
     }
 
 
@@ -65,6 +121,12 @@ public class SearchFragment extends Fragment {
 
                 if (requestCode == 0){
                     cuando.setText(opcion);
+                }
+                if (requestCode == 1){
+                    donde.setText(opcion);
+                }
+                if (requestCode == 2){
+                    interes.setText(opcion);
                 }
             }
         }
@@ -87,6 +149,8 @@ public class SearchFragment extends Fragment {
         });
 
     }
+
+
 
 
 

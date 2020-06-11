@@ -10,10 +10,14 @@ public class Event extends Activity {
 
 
 
-    public Event(int image, String title, String desc) {
+    public Event(String image, String title, String desc) {
         this.Image = image;
         this.Name = title;
         this.Description = desc;
+    }
+
+    public Event(){
+
     }
 
 
