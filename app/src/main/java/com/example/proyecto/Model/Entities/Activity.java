@@ -16,6 +16,8 @@ public abstract class Activity implements Serializable {
     public Category Category;
     private int Like = 0;
     private int Assistant = 0;
+    public int icon;
+    public String id;
 
     public void Likes(){
         Like += 1;

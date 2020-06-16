@@ -7,36 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Controller.DetailActivity"
     >
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbardetail"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        >
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsingtoolbar_detail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_scrollFlags="exitUntilCollapsed|scroll|snap"
-            app:contentScrim="?attr/colorPrimary"
-            app:title=""
-
-            android:background="@drawable/monumento_de_la_pilonera_mayor"
-            >
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbardetail"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                app:layout_collapseMode="pin"
-                ></androidx.appcompat.widget.Toolbar>
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-
-    </com.google.android.material.appbar.AppBarLayout>
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,10 +14,36 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imagedetail"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:src="@drawable/monumento_de_la_pilonera_mayor"
+                android:scaleType="centerCrop">
+
+            </ImageView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/titulodetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="La Pilonera Mayor"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/editColorTextBlack">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
@@ -260,6 +256,7 @@
                     </ImageView>
 
                     <TextView
+                        android:id="@+id/addressdetail"
                         android:layout_gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
