@@ -37,9 +37,6 @@ public class ContainerActivity extends AppCompatActivity {
                     case R.id.nav_search:
                         selectedFragment = new SearchFragment();
                         break;
-                    case R.id.nav_profile:
-                        selectedFragment = new ProfileFragment();
-                        break;
                     case R.id.nav_map:
                         selectedFragment = new MapFragment();
                         break;

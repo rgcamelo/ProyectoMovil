@@ -57,7 +57,7 @@ public class MapFragment extends SupportMapFragment implements OnMapReadyCallbac
     public void cargarLista(){
         activities=new ArrayList<Activity>();
         activities.add(new Place(
-                "https://66.media.tumblr.com/4fdfa0eb6cd84dbc748d54b53c9a55b5/bf1cd4815be83dc5-6b/s1280x1920/1dd9e31ba2d2909e68185ab5a20259abe3d96b91.jpg",
+                "https://66.media.tumblr.com/7f82737390f529ce71a4d0dd88f0a8ee/35f0097d73643af1-62/s500x750/9444ff3f3634ac0f2d31abdb2b2f97f1ae370f17.jpg",
                 "Pilonera Mayor",
                 "Entrando a Valledupar por el puente Hurtado, la Pilonera Mayor es uno de los grandes símbolos que acogen al visitante." +
                         " A pocos metros del Parque de la Leyenda, la estatua da vida a una de las rotondas más espaciosas y bonitas de la ciudad. " +
@@ -72,7 +72,7 @@ public class MapFragment extends SupportMapFragment implements OnMapReadyCallbac
                 )
         );
         activities.add(new Place(
-                        "https://66.media.tumblr.com/4fdfa0eb6cd84dbc748d54b53c9a55b5/bf1cd4815be83dc5-6b/s1280x1920/1dd9e31ba2d2909e68185ab5a20259abe3d96b91.jpg",
+                        "https://66.media.tumblr.com/427318aec8449ed2b719bc06b2e29e32/e2986cdb11a0d600-13/s400x600/ef0375ec5c3367c8f636478fa40b78df2de17d9c.jpg",
                         "La Sirena",
                         "Dorada y erguida sobre un trono, la sirena resplandece. Domina el río Guatapurí y fascina al paseante que la observa desde el puente." +
                                 "Ella es uno de los símbolos más representativos de Valledupar. Un monumento radiante en medio de la vegetación, frente a una orilla " +
@@ -81,11 +81,52 @@ public class MapFragment extends SupportMapFragment implements OnMapReadyCallbac
                         "Direccion",
                         "Valledupar",
                         "10.50147, -73.27125",
-                         R.drawable.sirena,
+                        R.drawable.sirena,
                         "1"
                 )
         );
-
+        activities.add(new Place(
+                        "https://66.media.tumblr.com/8eec6910959d24be1793d0b7696eb929/c260f70189efc74b-61/s640x960/59a3cdf63dbbcd55b625c857c9f024f02639b0be.jpg",
+                        "La Chichamaya",
+                        "Una escultura en bronce situada cerca de la Villa Olímpica. Si indagamos en su origen descubrimos que se refiere a una danza  de la etnia wayuu, " +
+                                "oriunda de la Guajira. Esta danza representa una auténtica lucha entre el hombre y la mujer en la cual aparecen muchos elementos de la vida " +
+                                "familiar en la Guajira (que hacen referencia a la pareja o la poligamia).",
+                        "Monumento",
+                        "Direccion",
+                        "Valledupar",
+                        "10.461907, -73.274079",
+                        R.drawable.chimi,
+                        "2"
+                )
+        );
+        activities.add(new Place(
+                        "https://66.media.tumblr.com/5e82dab7256effa6fd4652d2f5b9743a/c260f70189efc74b-1e/s400x600/d54d6ff22a47540c0f2b2869058e070077ac30c2.jpg",
+                        "El Obelisco",
+                        "El Obelisco es una estructura de cemento de 30 metros de alto situado a la entrada de Valledupar en la vía que de Barranquilla y Fundación " +
+                                "conduce a esta ciudad. Fue diseñado por el arquitecto Carlos García como un \"homenaje a la vida\" y su construcción, a cargo del arquitecto " +
+                                "Helcías Castilla, data de 1994, lo cual no obsta para que, pese a su juventud, ya sea considerado como un hito o referente del espacio vital de la ciudad ",
+                        "Monumento",
+                        "Direccion",
+                        "Valledupar",
+                        "10.446504, -73.262455",
+                        R.drawable.obelisco,
+                        "3"
+                )
+        );
+        activities.add(new Place(
+                        "https://66.media.tumblr.com/b09b51d885191be58797422521eef772/c260f70189efc74b-10/s540x810/1753ba5a86fe913b1b2e9e86f36b00e66985d48a.jpg",
+                        "Las Monedas",
+                        "En Patillal, media hora al norte de Valledupar, está el Parque de las Monedas, un sitio en el que se les rinde homenaje a ocho compositores " +
+                                "vallenatos nacidos en este pueblo. Se trata de una gliptoteca al aire libre en la que las caras de maestros como Rafael Escalona y Freddy " +
+                                "Molina adornan por un lado monedas de cerca de un metro de diámetro; por el otro se lee un pedazo de la letra de una canción",
+                        "Monumento",
+                        "Direccion",
+                        "Patillal",
+                        "10.701606, -73.21201",
+                        R.drawable.moneda,
+                        "4"
+                )
+        );
     }
 
     @Override

@@ -21,10 +21,11 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
-public class AdapterResultList extends RecyclerView.Adapter<AdapterResultList.ResultViewHolder> {
+public class AdapterResultList extends RecyclerView.Adapter<AdapterResultList.ResultViewHolder> implements View.OnClickListener {
 
     private List<Activity> actividades;
     private Context context;
+    private View.OnClickListener listener;
 
     public AdapterResultList( List<Activity> act, Context co){
         super();
@@ -36,6 +37,7 @@ public class AdapterResultList extends RecyclerView.Adapter<AdapterResultList.Re
     @Override
     public ResultViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_result,parent,false);
+        view.setOnClickListener(this);
         return new ResultViewHolder(view);
     }
 
@@ -60,6 +62,17 @@ public class AdapterResultList extends RecyclerView.Adapter<AdapterResultList.Re
     @Override
     public int getItemCount() {
         return actividades.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if ( listener != null){
+            listener.onClick(v);
+        }
     }
 
     class ResultViewHolder extends RecyclerView.ViewHolder{

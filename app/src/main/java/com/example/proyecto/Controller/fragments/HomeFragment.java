@@ -77,7 +77,8 @@ public class HomeFragment extends Fragment {
     public void cargarlista(){
         activities = new ArrayList<>();
         mDatabase = FirebaseDatabase.getInstance().getReference("6");
-        Query query = mDatabase.child("data");
+        Query query = mDatabase.child("data")
+                .orderByChild("category").equalTo("Evento");
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -88,11 +89,19 @@ public class HomeFragment extends Fragment {
                         String name = ds.child("name").getValue().toString();
                         String image = ds.child("image").getValue().toString();
                         String desc = ds.child("description").getValue().toString();
+                        String categoria = ds.child("category").getValue().toString();
+                        String web = ds.child("web").getValue().toString();
+                        String ciudad = ds.child("state").getValue().toString();
+                        String direccion = ds.child("address").getValue().toString();
 
                         Place place = new Place();
                         place.Name = name;
                         place.Image = image;
                         place.Description = desc;
+                        place.State=ciudad;
+                        place.setWeb(web);
+                        place.setPhone(categoria);
+                        place.setType(direccion);
                         activities.add(place);
                     }
 

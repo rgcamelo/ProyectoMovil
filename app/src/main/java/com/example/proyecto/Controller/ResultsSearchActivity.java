@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.proyecto.Model.Entities.Activity;
 import com.example.proyecto.Model.Entities.Place;
@@ -77,6 +78,10 @@ public class ResultsSearchActivity extends AppCompatActivity {
                         String name = ds.child("name").getValue().toString();
                         String image = ds.child("image").getValue().toString();
                         String desc = ds.child("description").getValue().toString();
+                        String categoria = ds.child("category").getValue().toString();
+                        String web = ds.child("web").getValue().toString();
+                        String ciudad = ds.child("state").getValue().toString();
+                        String direccion = ds.child("address").getValue().toString();
 
                         Log.i("AQUI",name);
                         Log.i("AQUI", desc);
@@ -86,6 +91,10 @@ public class ResultsSearchActivity extends AppCompatActivity {
                         place.Name = name;
                         place.Image = image;
                         place.Description = desc;
+                        place.State=ciudad;
+                        place.setWeb(web);
+                        place.setPhone(categoria);
+                        place.setType(direccion);
                         activities.add(place);
                     }
 
@@ -95,7 +104,17 @@ public class ResultsSearchActivity extends AppCompatActivity {
                     linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                     recyclerView.setLayoutManager(linearLayoutManager);
                     AdapterResultList adapterResultList = new AdapterResultList(activities,context);
+                    adapterResultList.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(context, DetailActivity.class);
+                            intent.putExtra("actividad", activities.get(recyclerView.getChildAdapterPosition(v)));
+                            context.startActivity(intent);
+                        }
+                    });
                     recyclerView.setAdapter(adapterResultList);
+
+
                 }
             }
 

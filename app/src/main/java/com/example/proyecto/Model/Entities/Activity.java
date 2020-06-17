@@ -12,12 +12,21 @@ public abstract class Activity implements Serializable {
     public String Phone;
     public String State;
     public String Type;
+    public String Web;
     public Municipality Municipality;
     public Category Category;
     private int Like = 0;
     private int Assistant = 0;
     public int icon;
     public String id;
+
+    public String getWeb() {
+        return Web;
+    }
+
+    public void setWeb(String web) {
+        Web = web;
+    }
 
     public void Likes(){
         Like += 1;
