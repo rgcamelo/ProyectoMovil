@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.proyecto.Controller.DetailActivity;
+import com.example.proyecto.Controller.MunicipalityDetailActivity;
 import com.example.proyecto.Model.Entities.Activity;
 import com.example.proyecto.Model.Entities.Event;
 import com.example.proyecto.Model.Entities.Place;
@@ -157,16 +158,30 @@ public class MapFragment extends SupportMapFragment implements OnMapReadyCallbac
             Log.i("TAG", "Aqui"+item.id);
             map.addMarker(markerOptions);
         }
+        LatLng latLng2 = new LatLng( 9.257388, -73.812386);
+        MarkerOptions m = new MarkerOptions().
+                position(latLng2).
+                title("Chimichagua").
+                snippet("5");
+        map.addMarker(m);
 
 
 
         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                Intent intent = new Intent(getContext(), DetailActivity.class);
-                intent.putExtra("actividad", activities.get(Integer.parseInt(marker.getSnippet())));
-                startActivity(intent);
-                return false;
+                if (marker.getSnippet().equals("5")){
+                    Intent intent = new Intent(getContext(), MunicipalityDetailActivity.class);
+                    startActivity(intent);
+                    return false;
+                }
+                else{
+                    Intent intent = new Intent(getContext(), DetailActivity.class);
+                    intent.putExtra("actividad", activities.get(Integer.parseInt(marker.getSnippet())));
+                    startActivity(intent);
+                    return false;
+                }
+
             }
         });
         // Más opciones para el marcador en:

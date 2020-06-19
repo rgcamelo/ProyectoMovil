@@ -136,6 +136,9 @@ public class SearchFragment extends Fragment {
         cblugar = (CheckBox) view.findViewById(R.id.rb_lugar);
         cbevento = (CheckBox) view.findViewById(R.id.rb_evento);
         final LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.cuando_SearchPanel);
+        final LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.checkboxpanel);
+        linearLayout.setVisibility(View.GONE);
+        linearLayout2.setVisibility(View.GONE);
         cbevento.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

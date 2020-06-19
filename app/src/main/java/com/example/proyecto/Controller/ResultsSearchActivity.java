@@ -35,6 +35,14 @@ public class ResultsSearchActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private AdapterResultList adapterResultList;
 
+
+    String textobuscar;
+    String cuando;
+    String donde;
+    String interes;
+    String Lugar;
+    String Evento;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +52,12 @@ public class ResultsSearchActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycleresults);
         //adapterResultList = new AdapterResultList(,R.layout.item_list_result,this);
 
-        String textobuscar = getIntent().getStringExtra("textobuscar");
-        String cuando = getIntent().getStringExtra("cuando");
-        String donde = getIntent().getStringExtra("donde");
-        String interes = getIntent().getStringExtra("interes");
-        String Lugar = getIntent().getStringExtra("Lugar");
-        String Evento = getIntent().getStringExtra("Evento");
+        textobuscar = getIntent().getStringExtra("textobuscar");
+        cuando = getIntent().getStringExtra("cuando");
+        donde = getIntent().getStringExtra("donde");
+        interes = getIntent().getStringExtra("interes");
+        Lugar = getIntent().getStringExtra("Lugar");
+        Evento = getIntent().getStringExtra("Evento");
         final Context context = this;
         cargarlista(context);
     }
@@ -63,10 +71,32 @@ public class ResultsSearchActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void filtros(Place place){
+        Place placebuscado;
+        String cadenaDondeBuscar = place.getName().toUpperCase();
+        String loQueQuieroBuscar = textobuscar.toUpperCase();
+        String[] palabras = loQueQuieroBuscar.split("\\s+");
+        for (String palabra : palabras) {
+            if (cadenaDondeBuscar.contains(palabra)) {
+                if ( place.getPhone().equals("Cualquier cosa") || place.getPhone().equals(interes) ){
+                    placebuscado=place;
+                    activities.add(placebuscado);
+                }
+
+            }
+        }
+
+    }
+
     public void cargarlista(final Context context){
         activities = new ArrayList<>();
         mDatabase = FirebaseDatabase.getInstance().getReference("6");
         Query query = mDatabase.child("data");
+        if ( !donde.isEmpty() && !donde.equals("Donde sea")){
+            query = query.orderByChild("state").equalTo(donde);
+        }
+
+
         //query.addValueEventListener(valueEventListener);
 
         query.addValueEventListener(new ValueEventListener() {
@@ -95,7 +125,9 @@ public class ResultsSearchActivity extends AppCompatActivity {
                         place.setWeb(web);
                         place.setPhone(categoria);
                         place.setType(direccion);
-                        activities.add(place);
+
+                        filtros(place);
+
                     }
 
 

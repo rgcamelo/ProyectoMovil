@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller.MunicipalityDetailActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/imagen_0"
+                android:scaleType="centerCrop">
+
+            </ImageView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CHIMICHAGUA"
+                    android:textColor="@color/editColorTextBlack"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:gravity="center_horizontal">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/editColorTextBlack"
+                   android:text="Chimichagua, a 3 horas de Valledupar, sobre la orilla del Río Cesar y la Ciénaga de Zapatosa, hace parte de la ruta comercial en piragua del legendario “Don Guillermo Cubillos”, exaltado por el compositor José Barros. Aquí, con el tiempo en suspenso, se puede gozar con las historias narradas por los pescadores y artesanos y deleitarse al ritmo enloquecedor de una tambora, en cualquier época del año, o en junio en el Festival de Danzas y Tamboras, y reencontrarse con la vida sencilla y alegre es estos amables nativos.
+                   Las pequeñas islas circundantes son un destino imperdible para aquellos de buscan realizar ecoturismo y pesca artesanal. Recuerde visitar la Plaza Francisco de Paula Santander y el Pozo del Higuerón. El principal plan en este municipio es visitar el Muelle flotante sobre la Ciénaga, tomar una embarcación y hacer un recorrido hasta las islas, esperar la tarde y contemplar los hermosos atardeceres.">
+
+               </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¿Como llegar?"
+                    android:textColor="@color/editColorTextBlack"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:gravity="center_horizontal">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vía terrestre puedes acceder a Chimichagua por la ruta del sol desde el interior del país o la costa caribe conectando con la ruta 43 desde Cuatro vientos a El Banco. "
+                    android:textColor="@color/editColorTextBlack"
+                    android:gravity="center_horizontal">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vía Aérea: El aeropuerto más cercano es el Alfonso Lopez de Valledupar. Hay vuelos comerciales diariamente. Este Aeropuerto está a una distancia de 200 km y un recorrido de aproximadamente 3 horas. Es fácil conseguir transporte por medio de buses o vans desde Valledupar."
+                    android:textColor="@color/editColorTextBlack"
+                    android:gravity="center_horizontal">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Actividades que puedes hacer"
+                    android:textColor="@color/editColorTextBlack"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:gravity="center_horizontal">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Visitar el Muelle."
+                        android:textColor="@color/editColorTextBlack"
+                        android:gravity="center_horizontal">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Visitar la casa de la cultura."
+                        android:textColor="@color/editColorTextBlack"
+                        android:gravity="center_horizontal">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Subir el cerro la calera. "
+                        android:textColor="@color/editColorTextBlack"
+                        android:gravity="center_horizontal">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Visitar la isla francachela."
+                        android:textColor="@color/editColorTextBlack"
+                        android:gravity="center_horizontal">
+
+                    </TextView>
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Información practica"
+                    android:textColor="@color/editColorTextBlack"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:gravity="center_horizontal">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chimichagua cuenta con una temperatura promedio de 30°C y una humedad relativa del 70%.
+
+En el muelle turístico puedes acceder a botes y lanchas en las que puedes hacer un recorrido por la ciénaga y visitar algunas islas y llegar a Candelaria, Senpegua o Saloa.
+
+En el corregimiento de Candelaria puedes visitar y conocer cómo las artesanas del pueblo realizan las esteras (piezas de tejido artesanal, usadas para cubrir el piso o mesa)."
+                    android:textColor="@color/editColorTextBlack"
+                    android:gravity="center_horizontal">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recomendaciones"
+                    android:textColor="@color/editColorTextBlack"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:gravity="center_horizontal">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Usar ropa para clima cálido y soleado."
+                        android:textColor="@color/editColorTextBlack"
+                        android:gravity="center_horizontal">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Llevar bloqueador solar."
+                        android:textColor="@color/editColorTextBlack"
+                        android:gravity="center_horizontal">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Usar repelente."
+                        android:textColor="@color/editColorTextBlack"
+                        android:gravity="center_horizontal">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Si vas a disfrutar de un paseo por la Ciénaga es importante llevar hidratación."
+                        android:textColor="@color/editColorTextBlack"
+                        android:gravity="center_horizontal">
+
+                    </TextView>
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

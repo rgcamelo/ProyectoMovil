@@ -39,6 +39,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/checkboxpanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -65,10 +66,10 @@
                 android:id="@+id/rb_evento"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:checked="true"
                 android:layout_weight="1"
                 android:background="@drawable/radio_flat_selector"
                 android:button="@null"
+                android:checked="true"
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="Evento"
